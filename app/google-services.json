@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "375473865790",
+    "project_id": "no-calories",
+    "storage_bucket": "no-calories.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:375473865790:android:623c1db46deea5fc51bd6f",
+        "android_client_info": {
+          "package_name": "com.example.nocalories"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "375473865790-jbnnki4u5tr7jdhj05f585hq450c4m8h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDojcDP4YdtRxOTLlqR9WQHnZctz8_h1Os"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "375473865790-jbnnki4u5tr7jdhj05f585hq450c4m8h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -6,5 +6,6 @@
     <color name="pale_green">#689f39</color>
     <color name="gray">#eeeeee</color>
     <color name="gray_10">#7a7a7a</color>
+    <color name="red">#de5245</color>
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#689f39</color>
 </resources>

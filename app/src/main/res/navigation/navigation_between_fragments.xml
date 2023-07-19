@@ -18,5 +18,33 @@
         <action
             android:id="@+id/action_registration_or_Login_to_registration_Stage_1"
             app:destination="@id/registration_Stage_1" />
+        <action
+            android:id="@+id/action_registration_or_Login_to_entryStage2"
+            app:destination="@id/entryStage2" />
     </fragment>
+    <fragment
+        android:id="@+id/entryStage2"
+        android:name="com.example.nocalories.EntryStage2"
+        android:label="fragment_entry_stage2"
+        tools:layout="@layout/fragment_entry_stage2" >
+        <action
+            android:id="@+id/action_entryStage2_to_registrationViaGoogle"
+            app:destination="@id/registrationViaGoogle" />
+        <action
+            android:id="@+id/action_entryStage2_to_login_via_email"
+            app:destination="@id/login_via_email" />
+        <action
+            android:id="@+id/action_entryStage2_to_registration_or_Login"
+            app:destination="@id/registration_or_Login" />
+    </fragment>
+    <fragment
+        android:id="@+id/login_via_email"
+        android:name="com.example.nocalories.Login_via_email"
+        android:label="fragment_login_via_email"
+        tools:layout="@layout/fragment_login_via_email" />
+    <fragment
+        android:id="@+id/registrationViaGoogle"
+        android:name="com.example.nocalories.RegistrationViaGoogle"
+        android:label="fragment_registration_via_google"
+        tools:layout="@layout/fragment_registration_via_google" />
 </navigation>
