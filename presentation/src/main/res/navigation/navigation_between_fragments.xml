@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_between_fragments"
+    app:startDestination="@id/registration_or_Login">
+
+    <fragment
+        android:id="@+id/registration_Stage_1"
+        android:name="com.example.nocalories.ui.activity.Registration_Stage_1"
+        android:label="fragment_registration__stage_1"
+        tools:layout="@layout/fragment_registration__stage_1" >
+        <action
+            android:id="@+id/action_registration_Stage_1_to_noCaloriesActivity"
+            app:destination="@id/noCaloriesActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/registration_or_Login"
+        android:name="com.example.nocalories.ui.activity.Registration_or_Login"
+        android:label="fragment_registration_or__login"
+        tools:layout="@layout/fragment_registration_or__login" >
+        <action
+            android:id="@+id/action_registration_or_Login_to_registration_Stage_1"
+            app:destination="@id/registration_Stage_1" />
+        <action
+            android:id="@+id/action_registration_or_Login_to_entryStage2"
+            app:destination="@id/entryStage2" />
+    </fragment>
+    <fragment
+        android:id="@+id/entryStage2"
+        android:name="com.example.nocalories.ui.activity.EntryStage2"
+        android:label="fragment_entry_stage2"
+        tools:layout="@layout/fragment_entry_stage2" >
+        <action
+            android:id="@+id/action_entryStage2_to_registrationViaGoogle"
+            app:destination="@id/registrationViaGoogle" />
+        <action
+            android:id="@+id/action_entryStage2_to_login_via_email"
+            app:destination="@id/login_via_email" />
+        <action
+            android:id="@+id/action_entryStage2_to_registration_or_Login"
+            app:destination="@id/registration_or_Login" />
+    </fragment>
+    <fragment
+        android:id="@+id/login_via_email"
+        android:name="com.example.nocalories.ui.activity.Login_via_email"
+        android:label="fragment_login_via_email"
+        tools:layout="@layout/fragment_login_via_email" >
+        <action
+            android:id="@+id/action_login_via_email_to_noCaloriesActivity"
+            app:destination="@id/noCaloriesActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationViaGoogle"
+        android:name="com.example.nocalories.ui.activity.RegistrationViaGoogle"
+        android:label="fragment_registration_via_google"
+        tools:layout="@layout/fragment_registration_via_google" >
+        <action
+            android:id="@+id/action_registrationViaGoogle_to_noCaloriesActivity"
+            app:destination="@id/noCaloriesActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/noCaloriesActivity"
+        android:name="com.example.nocalories.ui.activity.NoCaloriesActivity"
+        android:label="activity_no_calories"
+        tools:layout="@layout/activity_no_calories" />
+</navigation>
