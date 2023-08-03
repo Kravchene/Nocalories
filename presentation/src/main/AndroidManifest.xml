@@ -17,12 +17,17 @@
         android:theme="@style/Theme.NoCalories"
         tools:targetApi="31">
         <activity
-            android:name=".ui.activity.NoCaloriesActivity"
+            android:name=".ui.activity.mainBlock.ui.NoCaloriesActivityNav"
+            android:exported="false"
+            android:label="@string/title_activity_no_calories_nav"
+            android:theme="@style/Theme.NoCalories.NoActionBar" />
+        <activity
+            android:name=".ui.activity.mainBlock.ui.NoCaloriesActivity"
             android:exported="false"
             android:label="@string/title_activity_no_calories"
             android:theme="@style/Theme.NoCalories.NoActionBar" />
         <activity
-            android:name=".ui.activity.MainActivity"
+            android:name=".ui.activity.registrationBlock.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

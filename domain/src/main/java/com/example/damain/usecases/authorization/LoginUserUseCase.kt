@@ -1,4 +1,4 @@
-package com.example.damain.usecases
+package com.example.damain.usecases.authorization
 
 import com.example.damain.models.Status
 import com.example.damain.models.UserCreds

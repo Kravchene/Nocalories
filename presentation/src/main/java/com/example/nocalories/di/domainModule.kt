@@ -1,14 +1,31 @@
 package com.example.nocalories.di
 
-import com.example.damain.repository.AuthorizationRepository
-import com.example.damain.usecases.LoginUserUseCase
-import com.example.damain.usecases.RegistrationUserUseCase
-import com.example.data.network.repository.AuthorizationRepositoryImpl
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
+import com.example.damain.usecases.authorization.LoginUserUseCase
+import com.example.damain.usecases.authorization.RegistrationUserUseCase
+import com.example.damain.usecases.user.GetAllUserUseCase
+import com.example.damain.usecases.user.GetFlowUserUseCase
+import com.example.damain.usecases.user.InsertUserUseCase
 import org.koin.dsl.module
 
 val domainModule = module {
+    factory<InsertUserUseCase> {
+        InsertUserUseCase(
+            userRepository = get()
+        )
+    }
+
+    factory<GetAllUserUseCase> {
+        GetAllUserUseCase(
+            userRepository = get()
+        )
+    }
+
+    factory<GetFlowUserUseCase> {
+        GetFlowUserUseCase(
+            userRepository = get()
+        )
+    }
+
     factory<LoginUserUseCase> {
         LoginUserUseCase(
             authorizationRepository = get()

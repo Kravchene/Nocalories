@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.mainBlock.ui.general_statistics">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonBreakfast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/breakfast"
+        android:background="@drawable/batton_b"
+        android:textColor="@color/pale_green"
+        android:textSize="16sp"
+        android:layout_marginHorizontal="@dimen/margin_Start_eating"
+        android:layout_marginTop="@dimen/margin_Top_eating"
+        android:fontFamily="@font/alegreya_semi_bold"
+        android:layout_gravity="center"
+        tools:ignore="MissingConstraints" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonSecondBreakfast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/second_breakfast"
+        android:background="@drawable/batton_b"
+        android:textColor="@color/pale_green"
+        android:textSize="16sp"
+        android:layout_marginHorizontal="@dimen/margin_Start_eating"
+        android:layout_marginTop="@dimen/margin_Top_eating"
+        android:fontFamily="@font/alegreya_semi_bold"
+        android:layout_gravity="center"
+        tools:ignore="MissingConstraints" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonLunch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Lunch"
+        android:background="@drawable/batton_b"
+        android:textColor="@color/pale_green"
+        android:textSize="16sp"
+        android:layout_marginHorizontal="@dimen/margin_Start_eating"
+        android:layout_marginTop="@dimen/margin_Top_eating"
+        android:fontFamily="@font/alegreya_semi_bold"
+        android:layout_gravity="center"
+        tools:ignore="MissingConstraints" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonAfternoon_snack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Afternoon_snack"
+        android:background="@drawable/batton_b"
+        android:textColor="@color/pale_green"
+        android:textSize="16sp"
+        android:layout_marginHorizontal="@dimen/margin_Start_eating"
+        android:layout_marginTop="@dimen/margin_Top_eating"
+        android:fontFamily="@font/alegreya_semi_bold"
+        android:layout_gravity="center"
+        tools:ignore="MissingConstraints" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonSupper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Supper"
+        android:background="@drawable/batton_b"
+        android:textColor="@color/pale_green"
+        android:textSize="16sp"
+        android:layout_marginHorizontal="@dimen/margin_Start_eating"
+        android:layout_marginTop="@dimen/margin_Top_eating"
+        android:fontFamily="@font/alegreya_semi_bold"
+        android:layout_gravity="center"
+        tools:ignore="MissingConstraints" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonSecond_dinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Second_dinner"
+        android:background="@drawable/batton_b"
+        android:textColor="@color/pale_green"
+        android:textSize="16sp"
+        android:layout_marginTop="@dimen/margin_Top_eating"
+        android:fontFamily="@font/alegreya_semi_bold"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="@dimen/margin_Start_eating"
+        tools:ignore="MissingConstraints" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Activity"
+        android:background="@drawable/batton_b"
+        android:textColor="@color/pale_green"
+        android:textSize="16sp"
+        android:layout_marginTop="@dimen/margin_Top_eating"
+        android:fontFamily="@font/alegreya_semi_bold"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="@dimen/margin_Start_eating"
+        tools:ignore="MissingConstraints" />
+
+
+
+</LinearLayout>

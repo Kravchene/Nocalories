@@ -1,4 +1,4 @@
-package com.example.nocalories.ui.activity
+package com.example.nocalories.ui.activity.registrationBlock
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

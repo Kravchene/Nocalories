@@ -52,4 +52,22 @@
     <string name="title_activity_no_calories">NoCaloriesActivity</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+    <string name="title_activity_no_calories_nav">NoCaloriesActivityNav</string>
+    <string name="My_Profile">Мой профиль</string>
+    <string name="statistics">Cтатистика</string>
+    <string name="Recipes">Рецепты</string>
+    <string name="Recommendations">Cоветы для похудения</string>
+    <string name="Menu">Меню</string>
+    <string name="log_out_account">Выход из аккаунта</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="review">Обзор</string>
+    <string name="add_a_meal">Добавить приём пищи</string>
+    <string name="breakfast">Завтрак</string>
+    <string name="second_breakfast">Второй завтрак</string>
+    <string name="Lunch">Обед</string>
+    <string name="Afternoon_snack">Полдник</string>
+    <string name="Supper">Ужин</string>
+    <string name="Second_dinner">Второй ужин</string>
+    <string name="Activity">Активность</string>
 </resources>

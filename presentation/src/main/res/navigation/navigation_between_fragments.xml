@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_between_fragments"
-    app:startDestination="@id/registration_or_Login">
+    app:startDestination="@id/startCheck">
 
     <fragment
         android:id="@+id/registration_Stage_1"
-        android:name="com.example.nocalories.ui.activity.Registration_Stage_1"
+        android:name="com.example.nocalories.ui.activity.registrationBlock.Registration_Stage_1"
         android:label="fragment_registration__stage_1"
         tools:layout="@layout/fragment_registration__stage_1" >
         <action
-            android:id="@+id/action_registration_Stage_1_to_noCaloriesActivity"
-            app:destination="@id/noCaloriesActivity" />
+            android:id="@+id/action_registration_Stage_1_to_noCaloriesActivityNav"
+            app:destination="@id/navigation" />
     </fragment>
     <fragment
         android:id="@+id/registration_or_Login"
-        android:name="com.example.nocalories.ui.activity.Registration_or_Login"
+        android:name="com.example.nocalories.ui.activity.registrationBlock.Registration_or_Login"
         android:label="fragment_registration_or__login"
         tools:layout="@layout/fragment_registration_or__login" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/entryStage2"
-        android:name="com.example.nocalories.ui.activity.EntryStage2"
+        android:name="com.example.nocalories.ui.activity.registrationBlock.EntryStage2"
         android:label="fragment_entry_stage2"
         tools:layout="@layout/fragment_entry_stage2" >
         <action
@@ -43,25 +43,39 @@
     </fragment>
     <fragment
         android:id="@+id/login_via_email"
-        android:name="com.example.nocalories.ui.activity.Login_via_email"
+        android:name="com.example.nocalories.ui.activity.registrationBlock.Login_via_email"
         android:label="fragment_login_via_email"
         tools:layout="@layout/fragment_login_via_email" >
         <action
-            android:id="@+id/action_login_via_email_to_noCaloriesActivity"
-            app:destination="@id/noCaloriesActivity" />
+            android:id="@+id/action_login_via_email_to_noCaloriesActivityNav"
+            app:destination="@id/navigation" />
     </fragment>
     <fragment
         android:id="@+id/registrationViaGoogle"
-        android:name="com.example.nocalories.ui.activity.RegistrationViaGoogle"
+        android:name="com.example.nocalories.ui.activity.registrationBlock.RegistrationViaGoogle"
         android:label="fragment_registration_via_google"
-        tools:layout="@layout/fragment_registration_via_google" >
+        tools:layout="@layout/fragment_registration_via_google" />
+    <fragment
+        android:id="@+id/startCheck"
+        android:name="com.example.nocalories.ui.activity.registrationBlock.StartCheck"
+        android:label="fragment_start__check"
+        tools:layout="@layout/fragment_start__check" >
         <action
-            android:id="@+id/action_registrationViaGoogle_to_noCaloriesActivity"
-            app:destination="@id/noCaloriesActivity" />
+            android:id="@+id/action_startCheck_to_registration_or_Login"
+            app:destination="@id/registration_or_Login" />
+        <action
+            android:id="@+id/action_startCheck_to_noCaloriesActivityNav"
+            app:destination="@id/navigation" />
     </fragment>
-    <activity
-        android:id="@+id/noCaloriesActivity"
-        android:name="com.example.nocalories.ui.activity.NoCaloriesActivity"
-        android:label="activity_no_calories"
-        tools:layout="@layout/activity_no_calories" />
+    <navigation android:id="@+id/navigation"
+        app:startDestination="@id/noCaloriesActivityNav">
+        <activity
+            android:id="@+id/noCaloriesActivityNav"
+            android:name="com.example.nocalories.ui.activity.mainBlock.ui.NoCaloriesActivityNav"
+            android:label="app_bar_no_calories_activity_nav"
+            tools:layout="@layout/app_bar_no_calories_activity_nav" />
+        <action
+            android:id="@+id/action_global_registration_or_Login"
+            app:destination="@id/registration_or_Login" />
+    </navigation>
 </navigation>
