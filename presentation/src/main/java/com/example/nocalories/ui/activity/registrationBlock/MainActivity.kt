@@ -1,9 +1,8 @@
 package com.example.nocalories.ui.activity.registrationBlock
 
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-
+import androidx.appcompat.app.AppCompatActivity
 import com.example.nocalories.R
 
 

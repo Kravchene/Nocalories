@@ -1,10 +1,10 @@
-package com.example.nocalories.ui.activity.mainBlock.ui.home.Adapter
+package com.example.nocalories.ui.activity.mainBlock.home.Adapter
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.nocalories.ui.activity.mainBlock.home.AddMeal
+import com.example.nocalories.ui.activity.mainBlock.home.HomeFragment
 import com.example.nocalories.ui.activity.mainBlock.ui.General_statistics
-import com.example.nocalories.ui.activity.mainBlock.ui.home.Add_a_meal
-import com.example.nocalories.ui.activity.mainBlock.ui.home.HomeFragment
 
 class FragmentPageAdapter(fragmentActivity: HomeFragment) :
     FragmentStateAdapter(fragmentActivity) {
@@ -14,7 +14,7 @@ class FragmentPageAdapter(fragmentActivity: HomeFragment) :
 
     override fun createFragment(position: Int): Fragment {
         return if (position == 0)
-            Add_a_meal()
+            AddMeal()
         else
             General_statistics()
     }

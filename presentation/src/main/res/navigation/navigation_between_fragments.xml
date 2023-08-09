@@ -71,7 +71,7 @@
         app:startDestination="@id/noCaloriesActivityNav">
         <activity
             android:id="@+id/noCaloriesActivityNav"
-            android:name="com.example.nocalories.ui.activity.mainBlock.ui.NoCaloriesActivityNav"
+            android:name="com.example.nocalories.ui.activity.mainBlock.NoCaloriesActivityNav"
             android:label="app_bar_no_calories_activity_nav"
             tools:layout="@layout/app_bar_no_calories_activity_nav" />
         <action

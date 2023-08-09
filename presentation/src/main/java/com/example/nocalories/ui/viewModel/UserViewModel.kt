@@ -23,7 +23,7 @@ class UserViewModel(
     private val _state: MutableLiveData<ValidateState> = MutableLiveData(ValidateState.DEFAULT)
     val state: LiveData<ValidateState> = _state
 
-    val animals: StateFlow<List<User>> = getFlowUserUseCase.execute().stateIn(
+    val user: StateFlow<List<User>> = getFlowUserUseCase.execute().stateIn(
         scope = viewModelScope,
         started = SharingStarted.Eagerly,
         initialValue = listOf()
@@ -40,12 +40,6 @@ class UserViewModel(
         val user = isDataValid(name, gender, goal, age, weight, height) ?: return
         viewModelScope.launch(Dispatchers.IO) {
             insertUserUseCase.execute(user)
-        }
-    }
-
-    fun getAllAnimals() {
-        viewModelScope.launch {
-            val result = getAllUserUseCase.execute()
         }
     }
 

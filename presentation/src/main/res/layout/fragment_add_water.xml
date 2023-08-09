@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/gray"
+    tools:context=".ui.activity.mainBlock.home.AddWater">
+
+
+    <ImageView
+
+        android:id="@+id/imageView5"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/bez_fona_3"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/alegreya_semi_bold"
+        android:gravity="center"
+        android:text="@string/water"
+        android:background="@drawable/test"
+        android:padding="10dp"
+        android:textSize="20sp" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="3"
+    android:layout_margin="10dp">
+    <ImageView
+        android:id="@+id/image250"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/water"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:layout_marginStart="20dp"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/image500"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="50dp"
+        android:layout_weight="1"
+        android:src="@drawable/water"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/image1000"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/water"
+        android:layout_weight="1"
+        android:layout_marginStart="40dp"
+        tools:ignore="ContentDescription" />
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:layout_margin="10dp">
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/add250"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_250"
+        android:background="@drawable/batton_b"
+        android:textColor="@color/pale_green"
+        android:textSize="13sp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/hello"
+        android:paddingHorizontal="5dp"
+        android:layout_gravity="center"
+        tools:ignore="MissingConstraints"
+        android:layout_weight="1"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/add500"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_500"
+        android:background="@drawable/batton_b"
+        android:textColor="@color/pale_green"
+        android:textSize="13sp"
+        android:fontFamily="@font/hello"
+        android:paddingHorizontal="5dp"
+        android:layout_gravity="center"
+        tools:ignore="MissingConstraints"
+        android:layout_marginEnd="10dp"
+        android:layout_weight="1"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/add1000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_1000"
+        android:background="@drawable/batton_b"
+        android:textColor="@color/pale_green"
+        android:textSize="13sp"
+        android:fontFamily="@font/hello"
+        android:paddingHorizontal="5dp"
+        android:layout_gravity="center"
+        tools:ignore="MissingConstraints"
+        android:layout_weight="1"/>
+
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:paddingHorizontal="10dp"
+        android:text="@string/water_end"
+        android:textSize="20sp"
+        android:fontFamily="@font/alegreya_semi_bold"
+        android:background="@drawable/test"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:layout_margin="10dp"
+        android:layout_gravity="center">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/itsValue"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        app:boxBackgroundColor="@color/white"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:counterMaxLength="3"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxStrokeColor="@color/pale_green"
+        app:boxStrokeWidth="2dp"
+        app:hintTextColor="@color/pale_green"
+        android:layout_weight="1">
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/weightEditText"
+        android:maxLength="4"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:inputType="number"
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/addwater4"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/batton_b"
+            android:textColor="@color/pale_green"
+            android:textSize="14sp"
+            android:fontFamily="@font/hello"
+            android:layout_gravity="center"
+            android:layout_weight="1"/>
+</LinearLayout>
+
+    <TextView
+        android:id="@+id/water_advice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/water_advice"
+        android:layout_marginTop="50dp"
+        android:textSize="14sp"
+        android:textColor="@color/pale_green"
+        android:layout_gravity="center"/>
+
+</LinearLayout>
+

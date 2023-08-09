@@ -14,12 +14,11 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.launch
-import kotlin.Exception
 
-class AuthViewModel (
+class AuthViewModel(
     private val loginUserUseCase: LoginUserUseCase,
     private val registrationUserUseCase: RegistrationUserUseCase
-): ViewModel() {
+) : ViewModel() {
 
     private val _state: MutableLiveData<ValidateState> = MutableLiveData(ValidateState.DEFAULT)
     val state: LiveData<ValidateState> = _state
@@ -52,10 +51,10 @@ class AuthViewModel (
                 ).also {
                     _state.value = ValidateState.SUCCESS
                 }
-                }else throw Exception()
-            } catch (e: Exception) {
-                _state.value = ValidateState.FAIL
-                null
-            }
+            } else throw Exception()
+        } catch (e: Exception) {
+            _state.value = ValidateState.FAIL
+            null
         }
     }
+}

@@ -1,15 +1,13 @@
-package com.example.nocalories.ui.activity.mainBlock.ui.home
+package com.example.nocalories.ui.activity.mainBlock.home
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
-import com.example.nocalories.R
 import com.example.nocalories.databinding.FragmentHomeBinding
-import com.example.nocalories.ui.activity.mainBlock.ui.home.Adapter.FragmentPageAdapter
+import com.example.nocalories.ui.activity.mainBlock.home.Adapter.FragmentPageAdapter
 import com.google.android.material.tabs.TabLayout
 
 class HomeFragment : Fragment() {

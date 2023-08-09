@@ -1,12 +1,9 @@
 package com.example.nocalories.ui.activity.registrationBlock
 
 import android.app.ProgressDialog
-import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.UnderlineSpan
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,17 +11,19 @@ import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Toast
 import androidx.core.content.edit
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-
-import com.example.data.Local.model.UserModel
+import com.example.damain.models.User
 import com.example.nocalories.R
 import com.example.nocalories.databinding.FragmentRegistrationStage1Binding
 import com.example.nocalories.ui.model.ValidateState
 import com.example.nocalories.ui.viewModel.AuthViewModel
+import com.example.nocalories.ui.viewModel.UserViewModel
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.pawegio.kandroid.defaultSharedPreferences
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -36,6 +35,8 @@ class Registration_Stage_1 : Fragment() {
     lateinit var binding: FragmentRegistrationStage1Binding
     lateinit var dataFirebase: DatabaseReference
     private val authViewModel: AuthViewModel by viewModel()
+    private val userViewModel: UserViewModel by viewModel()
+    val scope = CoroutineScope(Dispatchers.IO)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -46,7 +47,7 @@ class Registration_Stage_1 : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        dataFirebase=FirebaseDatabase.getInstance().getReference("User")
+        dataFirebase = FirebaseDatabase.getInstance().getReference("User")
 
         val autoCompleteTextView: AutoCompleteTextView = binding.autoCompleteTextView
 
@@ -83,10 +84,12 @@ class Registration_Stage_1 : Fragment() {
         lifecycleScope.launch {
             authViewModel.authState.collectLatest { status ->
                 if (status.isSuccess) {
-
-                    val prefs =requireActivity().defaultSharedPreferences
+                    scope.launch {
+                        saveUser(user())
+                    }
+                    val prefs = requireActivity().defaultSharedPreferences
                     prefs.edit {
-                        putBoolean("CHECK",true)
+                        putBoolean("CHECK", true)
                     }
                     findNavController().navigate(R.id.action_registration_Stage_1_to_noCaloriesActivityNav)
                     requireActivity().finish()
@@ -102,6 +105,7 @@ class Registration_Stage_1 : Fragment() {
             }
         }
     }
+
     private fun initUi() {
         with(binding) {
             buttonEntrance.setOnClickListener {
@@ -110,7 +114,7 @@ class Registration_Stage_1 : Fragment() {
                 ) {
                     Toast.makeText(context, "Одно из полей пустое", Toast.LENGTH_SHORT).show()
                 } else {
-                    saveUserData()
+                   // saveUserData()
                     authViewModel.signUp(
                         loginEditText.text.toString(),
                         passwordEditText.text.toString()
@@ -121,28 +125,43 @@ class Registration_Stage_1 : Fragment() {
     }
 
     private fun saveUserData() {
+        val userId = dataFirebase.push().key!!
+        val userModel = user()
+        dataFirebase.child(userId).setValue(userModel)
+
+    }
+
+    private fun user(): User {
         with(binding) {
-            val email =loginEditText.text.toString()
-            val  gender: Int=when(radio.checkedRadioButtonId){
-                R.id.radio1->0
-                R.id.radio2->1
-                else ->0
+            val name = loginEditText.text.toString()
+            val gender: Int = when (radio.checkedRadioButtonId) {
+                R.id.radio1 -> 0
+                R.id.radio2 -> 1
+                else -> 0
             }
-            val goal: Int= when(autoCompleteTextView.adapter.toString()){
-                "Быть в форме"->0
-                "Похудеть"->1
-                "Набрать мышечную массу"->2
-                else ->2
+            val goal: Int = when (autoCompleteTextView.adapter.toString()) {
+                "Быть в форме" -> 0
+                "Похудеть" -> 1
+                "Набрать мышечную массу" -> 2
+                else -> 2
             }
-            val year=YearEditText.text.toString().toInt()
-            val weight=weightEditText.text.toString().toDouble()
-            val height =HeightEditText.text.toString().toInt()
+            val year = YearEditText.text.toString().toInt()
+            val weight = weightEditText.text.toString().toDouble()
+            val height = HeightEditText.text.toString().toInt()
 
-            val userId=dataFirebase.push().key!!
-            val userModel=UserModel(email,gender,goal,year,weight,height)
-
-            dataFirebase.child(userId).setValue(userModel)
-
+            return User(name, gender, goal, year, weight, height)
+        }
+    }
+    suspend fun saveUser(user: User) {
+        lifecycleScope.launch {
+            userViewModel.insertUser(
+                name = user.name,
+                gender = user.gender,
+                goal = user.goal,
+                age = user.age,
+                height = user.height,
+                weight = user.weight
+            )
         }
     }
 }

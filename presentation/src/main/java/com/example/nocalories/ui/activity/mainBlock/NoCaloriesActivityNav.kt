@@ -1,5 +1,6 @@
-package com.example.nocalories.ui.activity.mainBlock.ui
+package com.example.nocalories.ui.activity.mainBlock
 
+import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -46,7 +48,7 @@ class NoCaloriesActivityNav : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -54,28 +56,39 @@ class NoCaloriesActivityNav : AppCompatActivity() {
 
         navView.setNavigationItemSelectedListener {
             when (it.itemId) {
+                R.id.home -> findNavController(R.id.nav_host_fragment_content_no_calories_activity_nav).navigate(
+                    R.id.nav_home
+                )
+                R.id.MyProfile -> findNavController(R.id.nav_host_fragment_content_no_calories_activity_nav).navigate(
+                    R.id.nav_gallery
+                )
+                R.id.Statistics -> findNavController(R.id.nav_host_fragment_content_no_calories_activity_nav).navigate(
+                    R.id.nav_slideshow
+                )
+
                 R.id.recipes -> startActivity(
                     Intent(
                         Intent.ACTION_VIEW,
                         Uri.parse("https://www.russianfood.com/recipes/bytype/?fid=99")
                     )
                 )
-
-                R.id.log_out_account -> {
-                    val prefs = defaultSharedPreferences
-                    prefs.edit {
-                        putBoolean("CHECK", false)
-                    }
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.container, Registration_or_Login()).commit()
-                }
-
                 R.id.recommendations -> startActivity(
                     Intent(
                         Intent.ACTION_VIEW,
                         Uri.parse("https://medartby.ru/blog/stati-o-zdorovom-obraze-zhizni/26-sovetov-dlya-pokhudeniya-kotorye-realno-rabotayut/")
                     )
                 )
+                R.id.log_out_account -> {
+                    val prefs = defaultSharedPreferences
+                    prefs.edit {
+                        putBoolean("CHECK", false)
+                    }
+//                    supportFragmentManager.beginTransaction()
+ //                       .replace(R.id.container, Registration_or_Login()).commit()
+                    findNavController(R.id.container).navigate(R.id.action_global_registration_or_Login)
+                }
+
+
             }
             true
         }
@@ -91,5 +104,4 @@ class NoCaloriesActivityNav : AppCompatActivity() {
             findNavController(R.id.nav_host_fragment_content_no_calories_activity_nav)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
-
 }
