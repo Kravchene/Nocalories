@@ -1,11 +1,11 @@
-package com.example.data.Local.database
+package com.example.data.Local.User.database
 
 import  android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.data.Local.dao.UserDao
-import com.example.data.Local.model.UserModel
+import com.example.data.Local.User.dao.UserDao
+import com.example.data.Local.User.model.UserModel
 
 @Database(
     entities = [UserModel::class],

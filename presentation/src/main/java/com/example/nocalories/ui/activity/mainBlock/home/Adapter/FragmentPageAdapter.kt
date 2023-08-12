@@ -4,7 +4,8 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.nocalories.ui.activity.mainBlock.home.AddMeal
 import com.example.nocalories.ui.activity.mainBlock.home.HomeFragment
-import com.example.nocalories.ui.activity.mainBlock.ui.General_statistics
+import com.example.nocalories.ui.activity.mainBlock.ui.GeneralStatistics
+
 
 class FragmentPageAdapter(fragmentActivity: HomeFragment) :
     FragmentStateAdapter(fragmentActivity) {
@@ -16,6 +17,6 @@ class FragmentPageAdapter(fragmentActivity: HomeFragment) :
         return if (position == 0)
             AddMeal()
         else
-            General_statistics()
+            GeneralStatistics()
     }
 }

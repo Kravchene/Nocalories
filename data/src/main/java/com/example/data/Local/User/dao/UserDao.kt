@@ -1,9 +1,9 @@
-package com.example.data.Local.dao
+package com.example.data.Local.User.dao
 
 import kotlinx.coroutines.flow.Flow
 import androidx.room.*
 
-import com.example.data.Local.model.UserModel
+import com.example.data.Local.User.model.UserModel
 
 @Dao
 interface UserDao {

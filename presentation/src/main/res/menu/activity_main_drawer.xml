@@ -5,28 +5,28 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/home"
+            android:id="@+id/nav_home"
             android:icon="@drawable/baseline_cabin_24"
             android:title="@string/main_menu" />
         <item
-            android:id="@+id/MyProfile"
+            android:id="@+id/nav_pofel"
             android:icon="@drawable/baseline_person_24"
             android:title="@string/My_Profile" />
         <item
-            android:id="@+id/Statistics"
+            android:id="@+id/nav_slideshow"
             android:icon="@drawable/free_icon_font_chat_arrow_grow"
             android:title="@string/statistics" />
         <item
-            android:id="@+id/recipes"
+            android:id="@+id/recipes2"
             android:icon="@drawable/free_icon_font_restaurant_6349916_24"
             android:title="@string/Recipes" />
         <item
-            android:id="@+id/recommendations"
+            android:id="@+id/recommendations2"
             android:icon="@drawable/free_icon_font_comment_alt_3916599_24"
             android:title="@string/Recommendations"
             />
         <item
-            android:id="@+id/log_out_account"
+            android:id="@+id/logOutAccount"
             android:icon="@drawable/baseline_logout_24"
             android:title="@string/log_out_account" />
     </group>

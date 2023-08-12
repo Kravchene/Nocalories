@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.nocalories.databinding.FragmentGeneralStatisticsBinding
 
-class General_statistics : Fragment() {
+class GeneralStatistics : Fragment() {
     lateinit var binding: FragmentGeneralStatisticsBinding
 
 

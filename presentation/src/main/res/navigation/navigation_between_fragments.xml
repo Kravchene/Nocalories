@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/registration_Stage_1"
-        android:name="com.example.nocalories.ui.activity.registrationBlock.Registration_Stage_1"
+        android:name="com.example.nocalories.ui.activity.registrationBlock.RegistrationUser"
         android:label="fragment_registration__stage_1"
         tools:layout="@layout/fragment_registration__stage_1" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/registration_or_Login"
-        android:name="com.example.nocalories.ui.activity.registrationBlock.Registration_or_Login"
+        android:name="com.example.nocalories.ui.activity.registrationBlock.RegistrationOrLogin"
         android:label="fragment_registration_or__login"
         tools:layout="@layout/fragment_registration_or__login" >
         <action
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/login_via_email"
-        android:name="com.example.nocalories.ui.activity.registrationBlock.Login_via_email"
+        android:name="com.example.nocalories.ui.activity.registrationBlock.LoginViaEmail"
         android:label="fragment_login_via_email"
         tools:layout="@layout/fragment_login_via_email" >
         <action

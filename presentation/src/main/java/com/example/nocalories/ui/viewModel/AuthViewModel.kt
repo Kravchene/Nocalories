@@ -44,7 +44,7 @@ class AuthViewModel(
 
     private fun isDataValid(email: String, password: String): UserCreds? {
         return try {
-            if (LoginAndPasswordCheck.check(email) && LoginAndPasswordCheck.check(password)) {
+            if (LoginAndPasswordCheck.checkEmail(email) && LoginAndPasswordCheck.checkPassword(password)) {
                 UserCreds(
                     email = email,
                     password = password

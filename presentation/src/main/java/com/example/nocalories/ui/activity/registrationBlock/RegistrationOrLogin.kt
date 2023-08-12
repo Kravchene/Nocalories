@@ -10,7 +10,7 @@ import com.example.nocalories.R
 import com.example.nocalories.databinding.FragmentRegistrationOrLoginBinding
 
 
-class Registration_or_Login : Fragment() {
+class RegistrationOrLogin : Fragment() {
     lateinit var binding: FragmentRegistrationOrLoginBinding
 
     override fun onCreateView(

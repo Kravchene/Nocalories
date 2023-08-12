@@ -1,6 +1,7 @@
 package com.example.nocalories.di
 
 import com.example.nocalories.ui.viewModel.AuthViewModel
+import com.example.nocalories.ui.viewModel.UserMetricsViewModel
 import com.example.nocalories.ui.viewModel.UserViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -18,6 +19,14 @@ val presentationModule = module {
         AuthViewModel(
             loginUserUseCase = get(),
             registrationUserUseCase = get()
+        )
+    }
+    viewModel<UserMetricsViewModel>{
+        UserMetricsViewModel(
+            getAllUserMetricsUseCase = get(),
+            getFlowUserMetricsUseCase = get(),
+            insertUserMetricsUseCase = get(),
+            updateActivityDayUserMetricsUseCase = get(),
         )
     }
 

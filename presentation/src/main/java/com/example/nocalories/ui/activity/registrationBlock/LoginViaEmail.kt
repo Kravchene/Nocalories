@@ -20,7 +20,7 @@ import kotlinx.coroutines.withContext
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
-class Login_via_email : Fragment() {
+class LoginViaEmail : Fragment() {
 
     lateinit var binding: FragmentLoginViaEmailBinding
     private val authViewModel: AuthViewModel by viewModel()

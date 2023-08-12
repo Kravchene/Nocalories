@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/gray"
     android:orientation="vertical"
-    tools:context=".ui.activity.registrationBlock.Registration_Stage_1">
+    tools:context=".ui.activity.registrationBlock.RegistrationUser">
 
     <LinearLayout
         android:layout_width="match_parent"

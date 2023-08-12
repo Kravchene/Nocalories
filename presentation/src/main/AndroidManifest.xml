@@ -22,11 +22,6 @@
             android:label="@string/title_activity_no_calories_nav"
             android:theme="@style/Theme.NoCalories.NoActionBar" />
         <activity
-            android:name=".ui.activity.mainBlock.ui.NoCaloriesActivity"
-            android:exported="false"
-            android:label="@string/title_activity_no_calories"
-            android:theme="@style/Theme.NoCalories.NoActionBar" />
-        <activity
             android:name=".ui.activity.registrationBlock.MainActivity"
             android:exported="true">
             <intent-filter>

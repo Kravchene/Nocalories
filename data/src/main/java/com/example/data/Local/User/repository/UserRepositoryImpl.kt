@@ -1,9 +1,9 @@
-package com.example.data.Local.repository
+package com.example.data.Local.User.repository
 
 import com.example.damain.models.User
 import com.example.damain.repository.UserRepository
-import com.example.data.Local.dao.UserDao
-import com.example.data.Local.model.UserModel
+import com.example.data.Local.User.dao.UserDao
+import com.example.data.Local.User.model.UserModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

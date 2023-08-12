@@ -19,6 +19,7 @@ import com.example.nocalories.R
 import com.example.nocalories.databinding.FragmentRegistrationStage1Binding
 import com.example.nocalories.ui.model.ValidateState
 import com.example.nocalories.ui.viewModel.AuthViewModel
+import com.example.nocalories.ui.viewModel.UserMetricsViewModel
 import com.example.nocalories.ui.viewModel.UserViewModel
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -31,11 +32,12 @@ import kotlinx.coroutines.withContext
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
-class Registration_Stage_1 : Fragment() {
+class RegistrationUser : Fragment() {
     lateinit var binding: FragmentRegistrationStage1Binding
     lateinit var dataFirebase: DatabaseReference
     private val authViewModel: AuthViewModel by viewModel()
     private val userViewModel: UserViewModel by viewModel()
+    private val userMetricsViewModel: UserMetricsViewModel by viewModel()
     val scope = CoroutineScope(Dispatchers.IO)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -87,6 +89,17 @@ class Registration_Stage_1 : Fragment() {
                     scope.launch {
                         saveUser(user())
                     }
+                    lifecycleScope.launch {
+                        userMetricsViewModel.insertUserMetrics(
+                            caloriesDay = 0,
+                            activityDay = 0,
+                            waterDay = 0.0,
+                            squirrelsDay = 0.0,
+                            carbohydratesDay = 0.0,
+                            fatsDay = 0.0,
+                            fiberDay = 0.0
+                        )
+                    }
                     val prefs = requireActivity().defaultSharedPreferences
                     prefs.edit {
                         putBoolean("CHECK", true)
@@ -114,7 +127,7 @@ class Registration_Stage_1 : Fragment() {
                 ) {
                     Toast.makeText(context, "Одно из полей пустое", Toast.LENGTH_SHORT).show()
                 } else {
-                   // saveUserData()
+                    // saveUserData()
                     authViewModel.signUp(
                         loginEditText.text.toString(),
                         passwordEditText.text.toString()
@@ -152,6 +165,7 @@ class Registration_Stage_1 : Fragment() {
             return User(name, gender, goal, year, weight, height)
         }
     }
+
     suspend fun saveUser(user: User) {
         lifecycleScope.launch {
             userViewModel.insertUser(

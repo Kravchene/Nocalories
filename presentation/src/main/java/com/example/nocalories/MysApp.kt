@@ -1,7 +1,8 @@
 package com.example.nocalories
 
 import android.app.Application
-import com.example.data.Local.database.AppDatabase
+import com.example.data.Local.User.database.AppDatabase
+import com.example.data.Local.User.database.AppDatabaseUserMetrics
 import com.example.nocalories.di.dataModule
 import com.example.nocalories.di.domainModule
 import com.example.nocalories.di.presentationModule
@@ -15,6 +16,7 @@ import org.koin.core.logger.Level
 class MysApp: Application() {
 
     val database by lazy { AppDatabase.getDatabase(this) }
+    val databaseUserMetrics by lazy { AppDatabaseUserMetrics.getDatabase(this) }
     override fun onCreate() {
         super.onCreate()
         startKoin {

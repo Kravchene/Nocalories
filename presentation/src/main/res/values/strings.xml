@@ -46,9 +46,9 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_home">Главная страница</string>
+    <string name="menu_gallery">Профель</string>
+    <string name="menu_slideshow">Статистика</string>
     <string name="title_activity_no_calories">NoCaloriesActivity</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
@@ -97,4 +97,32 @@
     <string name="water_end">Если не одно не подходит добавьте свое значение</string>
     <string name="water_advice">нажмите сюда если хотите больше узнать о приёме воды</string>
     <string name="addwater4">Довавить</string>
+
+    <string name="link_to_recipes">https://www.russianfood.com/recipes/bytype/?fid=99</string>
+    <string name="link_loss_link">https://medartby.ru/blog/stati-o-zdorovom-obraze-zhizni/26-sovetov-dlya-pokhudeniya-kotorye-realno-rabotayut/</string>
+    <string name="link_water">"https://profilaktica.ru/for-population/profilaktika-zabolevaniy/vse-o-pravilnom-pitanii/skolko-vody-nuzhno-pit-v-den/</string>
+    <string name="Are_you_sure_you_want_to_get_out">Вы уверены что хотите выйти</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="activity_name">Название активности</string>
+    <string name="eating">Приём</string>
+    <string name="min">Введите количество минут</string>
+
+
+    <string name="activity_user_1">Бег</string>
+    <string name="activity_user_2">Плавание</string>
+    <string name="activity_user_3">Размеренная езда на велосипеде по ровной местности</string>
+    <string name="activity_user_4">Теннис</string>
+    <string name="activity_user_5">Активные формы йоги</string>
+    <string name="activity_user_6">Легкие работы в саду, ремонтные работы в доме</string>
+    <string name="activity_user_7">Занятия физкультурой</string>
+    <string name="activity_user_8">Плавательние брасом</string>
+    <string name="activity_user_9">Энергичные танцы</string>
+    <string name="activity_user_10">Прыжки со скакалкой</string>
+    <string name="activity_user_11">Тяжелые работы в саду (копание, перенос тяжестей с учащением сердцебиения)</string>
+    <string name="activity_user_12">Ходьба в гору или с тяжелым рюкзаком</string>
+    <string name="activity_user_13">Интенсивные интервальные тренировки</string>
+    <string name="activity_user_14">Ходьба</string>
+    <string name="activity_user_15">Скандинавская ходьба</string>
+
 </resources>

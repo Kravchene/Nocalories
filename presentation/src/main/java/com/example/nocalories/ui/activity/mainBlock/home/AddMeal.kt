@@ -22,6 +22,8 @@ import com.example.damain.logic.TheLogicOfCountingCalories.Companion.logicForWei
 import com.example.damain.logic.TheLogicOfCountingCalories.Companion.maintainingWeight
 import com.example.nocalories.R
 import com.example.nocalories.databinding.FragmentAddAMealBinding
+import com.example.nocalories.ui.activity.mainBlock.home.Adapter.UserActivityAdapter
+import com.example.nocalories.ui.viewModel.UserMetricsViewModel
 import com.example.nocalories.ui.viewModel.UserViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -30,8 +32,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AddMeal : Fragment() {
     lateinit var binding: FragmentAddAMealBinding
-
     private val userModel: UserViewModel by viewModel()
+    private val userMetricsViewModel: UserMetricsViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,6 +46,22 @@ class AddMeal : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        lifecycleScope.launch {
+            userMetricsViewModel.userMetrics.collectLatest { userMetrics ->
+                if (userMetrics.isNotEmpty()) {
+                    with(binding) {
+                        intakeOfCalories2.text = userMetrics.last().caloriesDay.toString()
+                        intakeOfCalories.text = userMetrics.last().activityDay.toString()
+                        intakeOfCalories3.text = userMetrics.last().waterDay.toString()
+                        caloriesStart.text = userMetrics.last().caloriesDay.toString()
+                        SquirrelsStart.text = userMetrics.last().squirrelsDay.toString()
+                        CarbohydratesStart.text = userMetrics.last().carbohydratesDay.toString()
+                        FatsStart.text = userMetrics.last().fatsDay.toString()
+                        FiberStart.text = userMetrics.last().fiberDay.toString()
+                    }
+                }
+            }
+        }
         lifecycleScope.launch {
             userModel.user.collectLatest { user ->
                 if (user.isNotEmpty()) {
@@ -95,8 +113,14 @@ class AddMeal : Fragment() {
                 }
             }
         }
-        binding.addWater.setOnClickListener {
-            findNavController().navigate(R.id.action_nav_home_to_addWater2)
+        with(binding) {
+            addWater.setOnClickListener {
+                findNavController().navigate(R.id.action_nav_home_to_addWater2)
+
+            }
+            add1.setOnClickListener {
+                findNavController().navigate(R.id.action_nav_home_to_userActivityPerDay)
+            }
         }
         //TODO создать ещё один репозиторий только для калорий воды и элементов чтобы хранить результат дня
         //TODO создать репозиторий для активности или просто ходьбы фрагмент с готовыми 8-10 активностями если будет мало времени

@@ -1,8 +1,10 @@
 package com.example.nocalories.di
 
 import com.example.damain.repository.AuthorizationRepository
+import com.example.damain.repository.UserMetricsRepository
 import com.example.damain.repository.UserRepository
-import com.example.data.Local.repository.UserRepositoryImpl
+import com.example.data.Local.User.repository.UserMetricsRepositoryImpl
+import com.example.data.Local.User.repository.UserRepositoryImpl
 import com.example.data.network.repository.AuthorizationRepositoryImpl
 import com.example.nocalories.MysApp
 import com.google.firebase.auth.ktx.auth
@@ -19,6 +21,11 @@ val dataModule = module {
     single<UserRepository> {
         UserRepositoryImpl(
             userDao = MysApp.INSTANCE.database.userDao(),
+        )
+    }
+    single<UserMetricsRepository> {
+        UserMetricsRepositoryImpl(
+            userMetricsDao = MysApp.INSTANCE.databaseUserMetrics.userMetricsDao()
         )
     }
 }

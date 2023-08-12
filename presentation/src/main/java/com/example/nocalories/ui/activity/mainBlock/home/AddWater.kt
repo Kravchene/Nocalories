@@ -26,28 +26,31 @@ class AddWater : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
             add250.setOnClickListener {
-                findNavController().navigate(R.id.action_addWater2_to_nav_home)
+                transition()
             }
             add500.setOnClickListener {
-                findNavController().navigate(R.id.action_addWater2_to_nav_home)
+                transition()
             }
             add1000.setOnClickListener {
-                findNavController().navigate(R.id.action_addWater2_to_nav_home)
+                transition()
             }
             if (itsValue.isNotEmpty()) {
                 add.setOnClickListener {
-                    findNavController().navigate(R.id.action_addWater2_to_nav_home)
+                    transition()
                 }
             }
             waterAdvice.setOnClickListener {
                 startActivity(
                     Intent(
                         Intent.ACTION_VIEW,
-                        Uri.parse("https://profilaktica.ru/for-population/profilaktika-zabolevaniy/vse-o-pravilnom-pitanii/skolko-vody-nuzhno-pit-v-den/")
+                        Uri.parse(resources.getString(R.string.link_water))
                     )
                 )
 
             }
         }
+    }
+    fun transition(){
+        findNavController().navigate(R.id.action_addWater2_to_nav_home)
     }
 }
