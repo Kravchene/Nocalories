@@ -18,6 +18,7 @@ import com.example.nocalories.ui.viewModel.UserMetricsViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class UserActivityPerDay : Fragment(), UserMetricsClickListener {
+
     lateinit var binding:FragmentUserActivityPerDayBinding
     private lateinit var viewModel: ActivityViewModel
 

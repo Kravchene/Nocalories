@@ -10,4 +10,5 @@ class GetAllUserMetricsUseCase (private val userMetricsRepository: UserMetricsRe
     suspend fun execute():List<UserMetrics> {
         return userMetricsRepository.getAllUserMetrics()
     }
+
 }

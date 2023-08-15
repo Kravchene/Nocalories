@@ -55,10 +55,8 @@
         app:boxCornerRadiusTopStart="10dp"
         app:boxStrokeColor="@color/pale_green"
         app:boxStrokeWidth="2dp"
-        app:counterMaxLength="3"
         android:layout_gravity="center"
         app:hintTextColor="@color/pale_green"
-
         >
 
         <com.google.android.material.textfield.TextInputEditText
@@ -66,7 +64,6 @@
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:maxLength="3"
             android:inputType="number"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -83,5 +80,4 @@
         android:paddingHorizontal="80dp"
         android:layout_gravity="center"
         tools:ignore="MissingConstraints" />
-
 </LinearLayout>

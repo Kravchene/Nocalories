@@ -1,31 +1,15 @@
 package com.example.damain.models
 
 import java.util.regex.Pattern
-
+const val REGEX_EMAIL="^([A-Za-z0-9_\\-\\.])+\\@([A-Za-z0-9_\\-\\.])+\\.([A-Za-z]{2,8})$"
+const val REGEX_PASSWORD="^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[#\\?!$%^&\\-_=;:\\+\\.,<>\\{\\}\\[\\]\\|\\(\\)\\/\\*\\\\])[a-zA-Z\\d#\\?!$%^&\\-_=;:\\+\\.,<>\\{\\}\\[\\]\\|\\(\\)\\/\\*\\\\]{8,255}$"
 class LoginAndPasswordCheck {
     companion object {
         fun checkEmail(string: String): Boolean {
-            val hasUpperCase = Pattern.compile("[A-Z]").matcher(string).find()
-            val hasDigit = Pattern.compile("[0-9]").matcher(string).find()
-            val hasLowerCase = Pattern.compile("[a-z]").matcher(string).find()
-            val hasSpecialCharacter = Pattern.compile("[!@#\$%^&*(),.?\":{}|<>]").matcher(string).find()
-            return if (hasUpperCase && hasLowerCase && (hasDigit || hasSpecialCharacter) && string.length >= 10) {
-                true
-            } else {
-                return false
-            }
-
+            return REGEX_EMAIL.toRegex().matches(string)
         }
         fun checkPassword(string: String): Boolean{
-            val hasUpperCase = Pattern.compile("[A-Z]").matcher(string).find()
-            val hasDigit = Pattern.compile("[0-9]").matcher(string).find()
-            val hasLowerCase = Pattern.compile("[a-z]").matcher(string).find()
-            val hasSpecialCharacter = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#\$%!\\-_?&])(?=\\S+\$).{8,}").matcher(string).find()
-            return if (hasUpperCase && hasLowerCase && (hasDigit || hasSpecialCharacter) && string.length >= 8) {
-                true
-            } else {
-                return false
-            }
+            return REGEX_PASSWORD.toRegex().matches(string)
         }
     }
 }

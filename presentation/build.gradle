@@ -78,4 +78,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth-ktx:22.1.0'
     //KAndroid
     implementation 'com.github.pawegio:KAndroid:0.8.7@aar'
+    //OkHttp
+    implementation("com.squareup.okhttp3:okhttp:4.10.0")
+    //Retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
 }

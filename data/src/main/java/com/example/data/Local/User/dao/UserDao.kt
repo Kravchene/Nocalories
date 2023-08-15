@@ -16,19 +16,19 @@ interface UserDao {
     @Query("DELETE FROM user")
     fun deleteAllUser()
 
-    @Query("UPDATE user SET weight = :newGender WHERE id = :id")
+    @Query("UPDATE user SET gender = :newGender WHERE id = :id")
     fun updateGender(id: Int, newGender: Int)
 
-    @Query("UPDATE user SET weight = :newGoal WHERE id = :id")
+    @Query("UPDATE user SET goal = :newGoal WHERE id = :id")
     fun updateGoal(id: Int, newGoal: Int)
 
-    @Query("UPDATE user SET weight = :newAge WHERE id = :id")
+    @Query("UPDATE user SET age = :newAge WHERE id = :id")
     fun updateAge(id: Int, newAge: Int)
 
     @Query("UPDATE user SET weight = :newWeight WHERE id = :id")
     fun updateWeight(id: Int, newWeight: Double)
 
-    @Query("UPDATE user SET weight = :newHeight WHERE id = :id")
+    @Query("UPDATE user SET height = :newHeight WHERE id = :id")
     fun updateHeight(id: Int, newHeight: Int)
 
     @Query("SELECT * FROM user")

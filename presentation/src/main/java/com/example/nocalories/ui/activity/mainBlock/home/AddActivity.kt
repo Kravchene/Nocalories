@@ -4,18 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.damain.logic.ActivityLogic.Companion.activityLogic
-import com.example.damain.models.UserActivity
 import com.example.nocalories.R
 import com.example.nocalories.databinding.FragmentAddActivityBinding
 import com.example.nocalories.ui.viewModel.ActivityViewModel
 import com.example.nocalories.ui.viewModel.UserMetricsViewModel
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
+import com.pawegio.kandroid.defaultSharedPreferences
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AddActivity : Fragment() {
@@ -32,6 +30,8 @@ class AddActivity : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val prefs = requireActivity().defaultSharedPreferences
+        val numberActivity = prefs.getInt("activity", 0)
         viewModel = ViewModelProvider(requireActivity())[ActivityViewModel::class.java]
         val userActivity = viewModel.getMyData()
 
@@ -42,30 +42,25 @@ class AddActivity : Fragment() {
 
             }
         }
+        with(binding) {
+            buttonAdd.setOnClickListener {
+                if (minEditText.text!!.isNotEmpty()) {
+                    val number = binding.minEditText.text.toString().toInt()
 
-        lifecycleScope.launch {
-            userMetricsViewModel.userMetrics.collectLatest { userMetrics ->
-                if (userMetrics.isNotEmpty()) {
-                    with(binding) {
-                        if (minEditText.text!!.isNotEmpty()) {
-                            val min = minEditText.text.toString().toInt()
-                            activityLogic(userActivity!!.functionNumber, min)
-                            lifecycleScope.launch {
-                                userMetricsViewModel.updateActivityDay(userMetrics.last().id,activityLogic(userActivity.functionNumber, min))
-                            }
-                        }
-                    }
+                    val functionNumber = viewModel.getMyData()!!.functionNumber
+
+                    val as1 = numberActivity + activityLogic(functionNumber, number)
+
+                    userMetricsViewModel.updateActivityDay(1, as1)
+
+                    findNavController().navigate(R.id.action_addActivity_to_nav_home)
+                } else {
+                    Toast.makeText(context, "Поле пустое", Toast.LENGTH_SHORT).show()
                 }
+
             }
         }
-
-                with(binding) {
-                    buttonAdd.setOnClickListener {
-                        if (minEditText.text!!.isNotEmpty()) {
-                            findNavController().navigate(R.id.nav_home)
-                        }
-                    }
-                }
-            }
-
     }
+}
+
+

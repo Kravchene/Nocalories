@@ -100,6 +100,7 @@ class RegistrationUser : Fragment() {
                             fiberDay = 0.0
                         )
                     }
+                    saveUserData()
                     val prefs = requireActivity().defaultSharedPreferences
                     prefs.edit {
                         putBoolean("CHECK", true)
@@ -127,7 +128,7 @@ class RegistrationUser : Fragment() {
                 ) {
                     Toast.makeText(context, "Одно из полей пустое", Toast.LENGTH_SHORT).show()
                 } else {
-                    // saveUserData()
+
                     authViewModel.signUp(
                         loginEditText.text.toString(),
                         passwordEditText.text.toString()
@@ -140,7 +141,11 @@ class RegistrationUser : Fragment() {
     private fun saveUserData() {
         val userId = dataFirebase.push().key!!
         val userModel = user()
-        dataFirebase.child(userId).setValue(userModel)
+        dataFirebase.child(userId).setValue(userModel).addOnCanceledListener {
+            Toast.makeText(context, "Данные сохранены", Toast.LENGTH_SHORT).show()
+        }.addOnFailureListener {
+            Toast.makeText(context, "Ошибка", Toast.LENGTH_SHORT).show()
+        }
 
     }
 

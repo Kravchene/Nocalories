@@ -4,10 +4,10 @@ class TheLogicOfCountingCalories {
     companion object {
         fun maintainingWeight(gender: Int, year: Int, weight: Double, height: Int): Int {
             return if (gender == 0) {
-                val value: Double = 66.5 + (13.75 * weight) + (5.003 * height) - (6.775 * year)
+                val value: Double = 66.5 + (13.75 * weight) + (5.003 * height) - (6.775 * (2023-year))
                 value.toInt()
             } else {
-                val value: Double = 655.1 + (9.563 * weight) + (1.85 * height) - (4.676 * year)
+                val value: Double = 655.1 + (9.563 * weight) + (1.85 * height) - (4.676 * (2023-year))
                 value.toInt()
             }
         }
@@ -15,11 +15,11 @@ class TheLogicOfCountingCalories {
         fun logicForWeightLoss(gender: Int, year: Int, weight: Double, height: Int): Int {
             return if (gender == 0) {
                 val value: Double =
-                    66.5 + (13.75 * weight) + (5.003 * height) - (6.775 * year) - 400
+                    66.5 + (13.75 * weight) + (5.003 * height) - (6.775 * (2023-year)) - 400
                 value.toInt()
             } else {
                 val value: Double =
-                    655.1 + (9.563 * weight) + (1.85 * height) - (4.676 * year) - 400
+                    655.1 + (9.563 * weight) + (1.85 * height) - (4.676 * (2023-year)) - 400
                 value.toInt()
             }
         }
@@ -27,11 +27,11 @@ class TheLogicOfCountingCalories {
         fun logicForWeightGain(gender: Int, year: Int, weight: Double, height: Int): Int {
             return if (gender == 0) {
                 val value: Double =
-                    66.5 + (13.75 * weight) + (5.003 * height) - (6.775 * year) + 500
+                    66.5 + (13.75 * weight) + (5.003 * height) - (6.775 * (2023-year)) + 500
                 value.toInt()
             } else {
                 val value: Double =
-                    655.1 + (9.563 * weight) + (1.85 * height) - (4.676 * year) + 500
+                    655.1 + (9.563 * weight) + (1.85 * height) - (4.676 * (2023-year)) + 500
                 value.toInt()
             }
         }

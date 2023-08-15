@@ -12,7 +12,12 @@ val presentationModule = module {
         UserViewModel(
             getAllUserUseCase = get(),
             getFlowUserUseCase = get(),
-            insertUserUseCase = get()
+            insertUserUseCase = get(),
+            updateWeightUserUseCase = get(),
+            updateAgeUserUseCase = get(),
+            updateGenderUserUseCase = get(),
+            updateGoalUserUseCase = get(),
+            updateHeightUserUseCase = get(),
         )
     }
     viewModel<AuthViewModel> {
@@ -27,6 +32,12 @@ val presentationModule = module {
             getFlowUserMetricsUseCase = get(),
             insertUserMetricsUseCase = get(),
             updateActivityDayUserMetricsUseCase = get(),
+            updateCaloriesDayUserMetricsUseCase = get(),
+            updateCarbohydratesDayUserMetricsUseCase = get(),
+            updateFatsDayUserMetricsUseCase = get(),
+            updateFiberDayUserMetricsUseCase = get(),
+            updateSquirrelsDayUserMetricsUseCase = get(),
+            updateWaterDayUserMetricsUseCase = get(),
         )
     }
 

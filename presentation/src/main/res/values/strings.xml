@@ -124,5 +124,18 @@
     <string name="activity_user_13">Интенсивные интервальные тренировки</string>
     <string name="activity_user_14">Ходьба</string>
     <string name="activity_user_15">Скандинавская ходьба</string>
+    <string name="Change_the_weight">Изменить вес</string>
+    <string name="weight">Вес</string>
+    <string name="save">Cохранить</string>
+    <string name="_0Water">0</string>
+    <string name="Change_gender">Изменить пол</string>
+    <string name="Change_goal">Изменить цель</string>
+    <string name="ChangeYear">Изменить год рождения</string>
+    <string name="year">Год</string>
+    <string name="sm">см</string>
+    <string name="ChangGrowth">Изменить рост</string>
+    <string name="_100">На 100 г</string>
+    <string name="_g">г</string>
+    <string name="_g2">Введите количество грамм</string>
 
 </resources>

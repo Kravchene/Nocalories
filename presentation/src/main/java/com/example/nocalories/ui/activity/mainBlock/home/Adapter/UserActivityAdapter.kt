@@ -41,7 +41,6 @@ class UserActivityAdapter(private val userMetricsClickListener: UserMetricsClick
     }
 
     override fun onBindViewHolder(holder: UserActivityHolder, position: Int) {
-        val userActivity = userActivityList[position]
         holder.bind(userActivityList[position], userMetricsClickListener )
     }
 

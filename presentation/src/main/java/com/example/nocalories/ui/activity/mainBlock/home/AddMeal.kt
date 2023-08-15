@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -22,9 +23,9 @@ import com.example.damain.logic.TheLogicOfCountingCalories.Companion.logicForWei
 import com.example.damain.logic.TheLogicOfCountingCalories.Companion.maintainingWeight
 import com.example.nocalories.R
 import com.example.nocalories.databinding.FragmentAddAMealBinding
-import com.example.nocalories.ui.activity.mainBlock.home.Adapter.UserActivityAdapter
 import com.example.nocalories.ui.viewModel.UserMetricsViewModel
 import com.example.nocalories.ui.viewModel.UserViewModel
+import com.pawegio.kandroid.defaultSharedPreferences
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -46,13 +47,15 @@ class AddMeal : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val prefs = requireActivity().defaultSharedPreferences
         lifecycleScope.launch {
             userMetricsViewModel.userMetrics.collectLatest { userMetrics ->
                 if (userMetrics.isNotEmpty()) {
                     with(binding) {
+
                         intakeOfCalories2.text = userMetrics.last().caloriesDay.toString()
-                        intakeOfCalories.text = userMetrics.last().activityDay.toString()
-                        intakeOfCalories3.text = userMetrics.last().waterDay.toString()
+                        activitDay.text = userMetrics.last().activityDay.toString()
+                        waterDay.text = userMetrics.last().waterDay.toString()
                         caloriesStart.text = userMetrics.last().caloriesDay.toString()
                         SquirrelsStart.text = userMetrics.last().squirrelsDay.toString()
                         CarbohydratesStart.text = userMetrics.last().carbohydratesDay.toString()
@@ -74,39 +77,45 @@ class AddMeal : Fragment() {
                         0 -> {
                             val calories = maintainingWeight(gender, age, weight, height)
                             with(binding) {
+                                val calories1=calories+activitDay.text.toString().toInt()
                                 currentWeight.text = weight.toString()
-                                caloriesEnd.text = calories.toString()
+                                caloriesEnd.text = calories1.toString()
                                 squirrelsEnd.text = squirrelLogic(calories).toString()
                                 carbohydratesEnd.text = logicCarbohydrates(calories).toString()
                                 fatsEnd.text = logicFats(calories).toString()
                                 fiberEnd.text = logicFiber(calories).toString()
                                 water.text = waterFine(weight).toString()
+
                             }
                         }
 
                         1 -> {
                             val calories = logicForWeightLoss(gender, age, weight, height)
                             with(binding) {
+                                val calories1=calories+activitDay.text.toString().toInt()
                                 currentWeight.text = weight.toString()
-                                caloriesEnd.text = calories.toString()
+                                caloriesEnd.text = calories1.toString()
                                 squirrelsEnd.text = squirrelLogicLoss(calories).toString()
                                 carbohydratesEnd.text = logicCarbohydratesLoss(calories).toString()
                                 fatsEnd.text = logicFatsLoss(calories).toString()
                                 fiberEnd.text = logicFiberLoss(calories).toString()
                                 water.text = waterForWeightLoss(weight).toString()
+
                             }
                         }
 
                         2 -> {
                             val calories = logicForWeightGain(gender, age, weight, height)
                             with(binding) {
+                                val calories1=calories+activitDay.text.toString().toInt()
                                 currentWeight.text = weight.toString()
-                                caloriesEnd.text = calories.toString()
+                                caloriesEnd.text = calories1.toString()
                                 squirrelsEnd.text = squirrelLogic(calories).toString()
                                 carbohydratesEnd.text = logicCarbohydrates(calories).toString()
                                 fatsEnd.text = logicFats(calories).toString()
                                 fiberEnd.text = logicFiber(calories).toString()
                                 water.text = waterFine(weight).toString()
+
                             }
                         }
                     }
@@ -114,15 +123,26 @@ class AddMeal : Fragment() {
             }
         }
         with(binding) {
+
             addWater.setOnClickListener {
                 findNavController().navigate(R.id.action_nav_home_to_addWater2)
-
+                prefs.edit {
+                    putFloat("Water", binding.waterDay.text.toString().toFloat())
+                }
             }
             add1.setOnClickListener {
+                prefs.edit {
+                    putInt("activity", binding.activitDay.text.toString().toInt())
+                }
                 findNavController().navigate(R.id.action_nav_home_to_userActivityPerDay)
             }
+            add4.setOnClickListener {
+                findNavController().navigate(R.id.action_nav_home_to_updateWeight)
+            }
+            add2.setOnClickListener {
+                findNavController().navigate(R.id.action_nav_home_to_foodCatalog)
+            }
         }
-        //TODO создать ещё один репозиторий только для калорий воды и элементов чтобы хранить результат дня
-        //TODO создать репозиторий для активности или просто ходьбы фрагмент с готовыми 8-10 активностями если будет мало времени
     }
 }
+

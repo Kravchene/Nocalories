@@ -84,19 +84,7 @@
         android:layout_gravity="center"
         android:layout_marginHorizontal="@dimen/margin_Start_eating"
         tools:ignore="MissingConstraints" />
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonActivity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/Activity"
-        android:background="@drawable/batton_b"
-        android:textColor="@color/pale_green"
-        android:textSize="16sp"
-        android:layout_marginTop="@dimen/margin_Top_eating"
-        android:fontFamily="@font/alegreya_semi_bold"
-        android:layout_gravity="center"
-        android:layout_marginHorizontal="@dimen/margin_Start_eating"
-        tools:ignore="MissingConstraints" />
+
 
 
 

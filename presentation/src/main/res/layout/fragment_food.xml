@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.mainBlock.home.Food">
+
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:src="@drawable/running"
+        android:importantForAccessibility="no" />
+
+    <TextView
+        android:id="@+id/food"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@drawable/test"
+        android:fontFamily="@font/russo_one_regular"
+        android:padding="10dp"
+        android:text="@string/action_sign_in"
+        android:textColor="@color/pale_green"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@drawable/test"
+        android:fontFamily="@font/russo_one_regular"
+        android:padding="10dp"
+        android:text="@string/_100"
+        android:textColor="@color/pale_green"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/test"
+        android:layout_gravity="center"
+        android:gravity=""
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/calories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/_0"
+            android:textColor="@color/pale_green"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/calories"
+            android:textColor="@color/pale_green"
+            android:textSize="14sp"
+             />
+
+        <TextView
+            android:id="@+id/squirrels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/_0"
+            android:textColor="@color/pale_green"
+            android:textSize="14sp"
+             />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/Squirrels"
+            android:textColor="@color/pale_green"
+            android:textSize="14sp"
+             />
+
+        <TextView
+            android:id="@+id/fats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/_0"
+            android:textColor="@color/pale_green"
+            android:textSize="14sp"
+             />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/Fats"
+            android:textColor="@color/pale_green"
+            android:textSize="14sp"
+             />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/test"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/carbohydrates"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="10dp"
+            android:text="@string/_0"
+            android:textColor="@color/pale_green"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+
+            android:text="@string/Carbohydrates"
+            android:textColor="@color/pale_green"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/fiber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+
+            android:text="@string/_0"
+            android:textColor="@color/pale_green"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+
+            android:text="@string/Fiber"
+            android:textColor="@color/pale_green"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/Fiber"
+            app:layout_constraintTop_toBottomOf="@+id/textView20" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@drawable/test"
+        android:fontFamily="@font/russo_one_regular"
+        android:padding="10dp"
+        android:text="@string/_g2"
+        android:textColor="@color/pale_green"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/HeightInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:elevation="10dp"
+            android:gravity="center"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxStrokeColor="@color/pale_green"
+            app:boxStrokeWidth="2dp"
+            app:hintTextColor="@color/pale_green">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/minEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:inputType="number" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/batton_b"
+        android:fontFamily="@font/alegreya_semi_bold"
+        android:paddingHorizontal="80dp"
+        android:text="@string/addwater4"
+        android:textColor="@color/pale_green"
+        android:textSize="16sp"
+        tools:ignore="MissingConstraints" />
+</LinearLayout>

@@ -30,7 +30,7 @@
         app:layout_constraintVertical_bias="0.161" />
 
     <TextView
-        android:id="@+id/intake_of_calories"
+        android:id="@+id/activitDay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -44,18 +44,17 @@
 
 
     <TextView
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
         android:fontFamily="@font/russo_one_regular"
         android:text="@string/_1"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/intake_of_calories"
-        app:layout_constraintEnd_toStartOf="@+id/intake_of_calories"
+        app:layout_constraintBottom_toBottomOf="@+id/activitDay"
+        app:layout_constraintEnd_toStartOf="@+id/activitDay"
         app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/intake_of_calories"
+        app:layout_constraintTop_toTopOf="@+id/activitDay"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
@@ -66,7 +65,7 @@
         android:text="@string/calories"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintStart_toEndOf="@+id/intake_of_calories"
+        app:layout_constraintStart_toEndOf="@+id/activitDay"
         app:layout_constraintTop_toTopOf="@+id/view"
         app:layout_constraintVertical_bias="0.785" />
 
@@ -164,12 +163,12 @@
         app:layout_constraintVertical_bias="0.163" />
 
     <TextView
-        android:id="@+id/intake_of_calories3"
+        android:id="@+id/waterDay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:fontFamily="@font/russo_one_regular"
-        android:text="@string/_0"
+        android:text="@string/_0Water"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/view3"
         app:layout_constraintStart_toStartOf="@+id/view3"
@@ -186,7 +185,7 @@
         android:text="@string/_l"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/view3"
-        app:layout_constraintStart_toEndOf="@+id/intake_of_calories3"
+        app:layout_constraintStart_toEndOf="@+id/waterDay"
         app:layout_constraintTop_toTopOf="@+id/view3"
         app:layout_constraintVertical_bias="0.586" />
 

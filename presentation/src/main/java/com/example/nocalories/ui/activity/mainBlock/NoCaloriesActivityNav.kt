@@ -13,9 +13,11 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.nocalories.R
 import com.example.nocalories.databinding.ActivityNoCaloriesNavBinding
 import com.google.android.material.navigation.NavigationView
+import com.pawegio.kandroid.defaultSharedPreferences
 
 
 class NoCaloriesActivityNav : AppCompatActivity() {
+
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityNoCaloriesNavBinding
