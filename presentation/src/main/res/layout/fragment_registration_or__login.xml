@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
 
-    tools:context=".ui.activity.Registration_or_Login">
+    tools:context=".ui.activity.registrationBlock.RegistrationOrLogin">
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="246dp"

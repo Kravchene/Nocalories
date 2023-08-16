@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.nocalories.ui.activity.mainBlock.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_addWater2"
+            app:destination="@id/addWater2" />
+        <action
+            android:id="@+id/action_nav_home_to_userActivityPerDay"
+            app:destination="@id/userActivityPerDay" />
+        <action
+            android:id="@+id/action_nav_home_to_updateWeight"
+            app:destination="@id/updateWeight" />
+        <action
+            android:id="@+id/action_nav_home_to_foodCatalog"
+            app:destination="@id/foodCatalog" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_pofel"
+        android:name="com.example.nocalories.ui.activity.mainBlock.profile.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_nav_pofel_to_changeGoal"
+            app:destination="@id/changeGoal" />
+        <action
+            android:id="@+id/action_nav_pofel_to_changeHeight"
+            app:destination="@id/changeHeight" />
+        <action
+            android:id="@+id/action_nav_pofel_to_changeGender"
+            app:destination="@id/changeGender" />
+        <action
+            android:id="@+id/action_nav_pofel_to_changeAge"
+            app:destination="@id/changeAge" />
+        <action
+            android:id="@+id/action_nav_pofel_to_changeHeight2"
+            app:destination="@id/changeHeight" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.nocalories.ui.activity.mainBlock.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/addWater2"
+        android:name="com.example.nocalories.ui.activity.mainBlock.home.AddWater"
+        android:label="Добавьте воду"
+        tools:layout="@layout/fragment_add_water">
+        <action
+            android:id="@+id/action_addWater2_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipes2"
+        android:name="com.example.nocalories.ui.activity.mainBlock.diplink.Recipes"
+        android:label="fragment_recipes"
+        tools:layout="@layout/fragment_recipes" >
+        <action
+            android:id="@+id/action_recipes2_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/recommendations2"
+        android:name="com.example.nocalories.ui.activity.mainBlock.diplink.Recommendations"
+        android:label="fragment_recommendations"
+        tools:layout="@layout/fragment_recommendations" >
+        <action
+            android:id="@+id/action_recommendations2_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/logOutAccount"
+        android:name="com.example.nocalories.ui.activity.mainBlock.diplink.LogOutAccount"
+        android:label="Выйти"
+        tools:layout="@layout/fragment_log_out_account">
+        <action
+            android:id="@+id/action_logOutAccount_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/userActivityPerDay"
+        android:name="com.example.nocalories.ui.activity.mainBlock.home.UserActivityPerDay"
+        android:label="Выберите активность"
+        tools:layout="@layout/fragment_user_activity_per_day">
+        <action
+            android:id="@+id/action_userActivityPerDay_to_addActivity"
+            app:destination="@id/addActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/addActivity"
+        android:name="com.example.nocalories.ui.activity.mainBlock.home.AddActivity"
+        android:label="Активность"
+        tools:layout="@layout/fragment_add_activity" >
+        <action
+            android:id="@+id/action_addActivity_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateWeight"
+        android:name="com.example.nocalories.ui.activity.mainBlock.home.UpdateWeight"
+        android:label="Изменить вес"
+        tools:layout="@layout/fragment_update_weight">
+        <action
+            android:id="@+id/action_updateWeight_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeAge"
+        android:name="com.example.nocalories.ui.activity.mainBlock.profile.ChangeAge"
+        android:label="Изменить год рождения"
+        tools:layout="@layout/fragment_change_age">
+        <action
+            android:id="@+id/action_changeAge_to_nav_pofel"
+            app:destination="@id/nav_pofel" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeGender"
+        android:name="com.example.nocalories.ui.activity.mainBlock.profile.ChangeGender"
+        android:label="Изменить пол"
+        tools:layout="@layout/fragment_change_gender">
+        <action
+            android:id="@+id/action_changeGender_to_nav_pofel"
+            app:destination="@id/nav_pofel" />
+        <action
+            android:id="@+id/action_changeGender_self"
+            app:destination="@id/changeGender" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeHeight"
+        android:name="com.example.nocalories.ui.activity.mainBlock.profile.ChangeHeight"
+        android:label="Изменить рост"
+        tools:layout="@layout/fragment_change_height">
+        <action
+            android:id="@+id/action_changeHeight_to_nav_pofel"
+            app:destination="@id/nav_pofel" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeGoal"
+        android:name="com.example.nocalories.ui.activity.mainBlock.profile.ChangeGoal"
+        android:label="Изменить цель"
+        tools:layout="@layout/fragment_change_goal">
+        <action
+            android:id="@+id/action_changeGoal_to_nav_pofel"
+            app:destination="@id/nav_pofel" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodCatalog"
+        android:name="com.example.nocalories.ui.activity.mainBlock.home.FoodCatalog"
+        android:label="Список продуктов"
+        tools:layout="@layout/fragment_food_catalog">
+        <action
+            android:id="@+id/action_foodCatalog_to_food2"
+            app:destination="@id/food2" />
+    </fragment>
+    <fragment
+        android:id="@+id/food2"
+        android:name="com.example.nocalories.ui.activity.mainBlock.home.Food"
+        android:label="Продукт"
+        tools:layout="@layout/fragment_food">
+        <action
+            android:id="@+id/action_food2_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+</navigation>

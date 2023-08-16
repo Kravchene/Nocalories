@@ -8,6 +8,7 @@
     <style name="Theme.NoCalories" parent="Base.Theme.NoCalories" />
 
     <style name="Theme.NoCalories.NoActionBar">
+        <item name="colorPrimary">@color/pale_green</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
@@ -15,4 +16,11 @@
     <style name="Theme.NoCalories.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.NoCalories.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="RoundedTabLayoutStyle" parent="Widget.Design.TabLayout">
+        <item name="tabBackground">@drawable/tabs_selector</item>
+        <item name="tabIndicator">@null</item>
+        <item name ="android:background">@drawable/tab_layout_bg </item>
+        <item name="tabSelectedTextColor">@color/white</item>
+        <item name="tabTextColor">@color/white</item>
+    </style >
 </resources>
